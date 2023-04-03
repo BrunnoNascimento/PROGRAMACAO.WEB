@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculo de juros</h1>
+
+    <p>
+        Digite o valor total da compra:
+        <input type="text" id="valor" placeholder="Digite aqui o valor">
+    </p>
+    <p>
+        Digite o número de parcelas:
+        <input type="text" id="parcelas" placeholder="Digite aqui as parcelas">
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <p>
+        <h2 id="juros"></h2>
+    </p>
+    <script>
+        function calcular(){
+            let valor;
+            let parcelas;
+
+            let valortotal;
+
+            valor = Number(document.getElementById("valor").value)
+            parcelas = Number(document.getElementById("parcelas").value)
+        
+            if(parcelas == 1){
+                valortotal = valor
+                document.getElementById("juros").innerHTML = `Juros: 0% | Valor total: ${valortotal}`
+            }
+            else{
+                if(parcelas == 2 || parcelas == 3){
+                    valortotal = valor * 1.03
+                    document.getElementById("juros").innerHTML = `Juros: 3% | Valor total: ${valortotal}`
+                }
+                else{
+                    if(parcelas >= 4){
+                        valortotal = valor * 1.07
+                        document.getElementById("juros").innerHTML = `Juros: 7% | Valor total: ${valortotal}`
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

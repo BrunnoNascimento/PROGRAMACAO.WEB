@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício3</title>
+    <style>
+        body{
+            font-style: italic;
+            color:darkmagenta;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Número maior</h1>
+
+        <div>
+            <label for="numero01">Pirmeiro Número:</label>
+            <input type="text" id="numero01" placeholder="Digite aqui o número">
+        </div>
+
+        <div>
+            <label for="comprimento">Segundo Número:</label>
+            <input type="text" id="numero02" placeholder="Digite aqui o número">
+        </div>
+    </form>
+    <p>
+        <h2 id="calculo"></h2>
+    </p>
+
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    
+    <script>
+        function calcular(){
+            let numero01;
+            let numero02;
+            let calculo;
+
+            numero01 = Number(document.getElementById("numero01").value)
+            numero02 = Number(document.getElementById("numero02").value)
+            document.getElementById("calculo").innerHTML = calculo
+
+            if(numero01 > numero02){
+                document.getElementById("calculo").innerHTML = `${numero01} é maior!`
+            }
+            else{
+                if(numero02 > numero01){
+                    document.getElementById("calculo").innerHTML = `${numero02} é maior!`
+                }
+                else{
+                    if(numero01 = numero02){
+                        document.getElementById("calculo").innerHTML = `${numero01} e ${numero02} são equivalentes!!!`
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

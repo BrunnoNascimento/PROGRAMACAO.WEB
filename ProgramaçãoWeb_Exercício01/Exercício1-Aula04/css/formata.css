@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
+body{
+    background-image: url(../imagens/UNI123128.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: Antonio;
+    text-align: center;
+}
+
+#lista{
+    background-color: aqua;
+    border-radius: 5px;
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+h1{
+    text-align: center;
+    color: darkblue;
+}
+
+h3{
+    color: black;
+    text-align: center;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+li{
+    color: darkcyan;
+}
+
+.imagem{
+    border-radius: 10px;
+
+}
+
+form{
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+
+article{
+    float: left;
+}
+
+footer{
+    background-color: lightcyan;
+    border-radius: 7px;
+}

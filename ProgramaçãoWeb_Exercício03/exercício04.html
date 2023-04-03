@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Área do retângulo</h1>
+
+    <p>
+        Entre com a base:
+        <input type="text" id="base" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        Entre com a altura:
+        <input type="text" id="altura" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        <h2 id="total"></h2>
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <script>
+        function calcular(){
+            let base;
+            let altura;
+
+            base = Number(document.getElementById("base").value)
+            altura = Number(document.getElementById("altura").value)
+            total = base * altura
+
+            document.getElementById("total").innerHTML = `A sua área é: ${total}!`
+
+        }
+    </script>
+</body>
+</html>

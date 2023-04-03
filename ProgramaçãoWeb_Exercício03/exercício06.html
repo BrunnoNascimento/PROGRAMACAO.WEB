@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Condições de pagamento</h1>
+
+    <p>
+        Entre com o valor:
+        <input type="text" id="valor" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        Entre com o código:
+        <input type="text" id="codigo" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        <h2 id="resultado"></h2>
+        <h2 id="conta"></h2>
+        <h2 id="res"></h2>
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <script>
+        function calcular(){
+            let valor;
+            let codigo;
+            let resultado;
+
+            valor = Number(document.getElementById("valor").value)
+            codigo = Number(document.getElementById("codigo").value)
+            resultado = valor-(10/100*valor)
+            conta = valor-(5/100*valor)
+            res = valor+(10/100*valor)
+
+            if(codigo == 1){
+                document.getElementById("resultado").innerHTML = `Seu valor com 10% de desconto é de: ${resultado}`
+            }
+            else{
+                if(codigo == 2){
+                    document.getElementById("resultado").innerHTML = `Seu valor com 5% de desconto é de: ${conta}`
+                }
+                else{
+                    if(codigo == 3){
+                        document.getElementById("resultado").innerHTML = `Seu valor com 10% de aumento é de: ${res}`
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

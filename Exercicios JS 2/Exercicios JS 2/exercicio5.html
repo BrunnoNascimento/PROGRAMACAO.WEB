@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caclculadora de Notas</title>
+</head>
+<body>
+    <p>
+        Digite a primeira nota:
+        <input type="text" id="nota1" placeholder="Digite a primeira nota">
+    </p>
+    <p>
+        Digite a segunda nota:
+        <input type="text" id="nota2" placeholder="Digite a segunda nota">
+    </p>
+    <p>
+        Digite a terceira nota:
+        <input type="text" id="nota3" placeholder="Digite a terceira nota">
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <p>
+        <h2 id="res"></h2>
+        <h1 id="exa"></h1>
+    </p>
+    <script>
+        function calcular(){
+            let nota1;
+            let nota2;
+            let nota3;
+
+            nota1 = Number(document.getElementById("nota1").value)
+            nota2 = Number(document.getElementById("nota2").value)
+            nota3 = Number(document.getElementById("nota3").value)
+            
+            let resultado = (nota1 + nota2 + nota3)/3
+
+            if(resultado >= 6){
+                document.getElementById("exa").innerHTML = `Você foi aprovado!`
+            }
+            else{
+                if(resultado < 6 && resultado >= 3){
+                    document.getElementById("exa").innerHTML = `Você terá que fazer o exame!`
+                }
+                else{
+                    if(resultado < 3){
+                        document.getElementById("exa").innerHTML = `Você foi reprovado!`
+                    }
+                }
+            }
+            document.getElementById("res").innerHTML = `A média é: ${resultado}`
+        }
+    </script>
+</body>
+</html>

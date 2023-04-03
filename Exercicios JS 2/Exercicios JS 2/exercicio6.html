@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            Digite o valor da compra:
+            <input type="text" id="compra" placeholder="Digite o valor da compra">
+        </div>
+        <div>
+            Digite o código (1: À vista 10% de desconto | 2: Cartão 5% de desconto | 3: Parcelado 10% de aumento)
+            <input type="text" id="codigo" placeholder="Digite o código">
+        </div>
+        <form>
+    <p>
+        <h2 id="res"></h2>
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <script>
+        function calcular(){
+            let compra;
+            let codigo;
+            let res;
+
+            compra = Number(document.getElementById("compra").value)
+            codigo = document.getElementById("codigo").value
+
+            if(codigo == "1"){
+                res = compra * 0.9
+                document.getElementById("res").innerHTML = `O valor total da compra é de: ${res}`
+            }
+            else{
+                if(codigo == "2"){
+                    res = compra * 0.95
+                    document.getElementById("res").innerHTML = `O valor total da compra é de: ${res}`
+                }
+                else{
+                    if(codigo == "3"){
+                        res = compra * 1.1
+                        document.getElementById("res").innerHTML = `O valor total da compra é de: ${res}`
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

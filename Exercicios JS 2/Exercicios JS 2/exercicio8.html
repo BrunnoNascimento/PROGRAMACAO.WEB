@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            Primeiro número: 
+            <input type="text" id="num1">
+        </div>
+        <div>
+            Segundo número: 
+            <input type="text" id="num2">
+        </div>
+    </form>
+    <p>
+        <input type="button" value="+" onclick="calcularADC()">
+        <input type="button" value="-" onclick="calcularSUB()">
+        <input type="button" value="*" onclick="calcularMUL()">
+        <input type="button" value="/" onclick="calcularDIV()">
+    </p>
+    <p>
+        Resultado:
+        <textarea id="res"></textarea>
+    </p>
+
+    <script>
+        function calcularADC(){
+            let num1;
+            let num2;
+            let res;
+            num1 = Number(document.getElementById("num1").value)
+            num2 = Number(document.getElementById("num2").value)
+
+            res = num1 + num2
+            document.getElementById("res").innerHTML = `O resultado é ${res}`
+        }
+        function calcularSUB(){
+            let num1;
+            let num2;
+            let res;
+            num1 = Number(document.getElementById("num1").value)
+            num2 = Number(document.getElementById("num2").value)
+
+            res = num1 - num2
+            document.getElementById("res").innerHTML = `O resultado é ${res}`
+        }
+        function calcularMUL(){
+            let num1;
+            let num2;
+            let res;
+            num1 = Number(document.getElementById("num1").value)
+            num2 = Number(document.getElementById("num2").value)
+
+            res = num1 * num2
+            document.getElementById("res").innerHTML = `O resultado é ${res}`
+        }
+        function calcularDIV(){
+            let num1;
+            let num2;
+            let res;
+            num1 = Number(document.getElementById("num1").value)
+            num2 = Number(document.getElementById("num2").value)
+
+            res = num1 / num2
+            document.getElementById("res").innerHTML = `O resultado é ${res}`
+        }
+    </script>
+</body>
+</html>

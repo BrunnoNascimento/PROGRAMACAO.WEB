@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício7</title>
+    <style>
+        body{
+            font-style: italic;
+            color:darkmagenta;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imposto de Renda</h1>
+
+    <form>
+
+        <div>
+            Registro: 
+            <input type="text" id="registro">
+        </div>
+        <div>
+            Nome: 
+            <input type="text" id="nome">
+        </div>
+        <div>
+            Salário: 
+            <input type="text" id="salario">
+        </div>
+
+    </form>
+
+    <p>
+        <input type="button" value="Calcular IR" onclick="calcular()">
+    </p>
+
+    <p>
+        Seu salário:
+        <textarea id="sal"></textarea>
+    </p>
+    <p>
+        Imposto de renda:
+        <textarea id="resultado"></textarea>
+    </p>
+    
+
+    <script>
+        function calcular(){
+            let registro;
+            let nome;
+            let salario;
+            let calculo;
+
+            salario = Number(document.getElementById("salario").value)
+
+
+            if (salario <= 1434){
+                calculo = salario*0 
+                document.getElementById("sal").innerHTML = `Seu salário: ${salario}`
+                document.getElementById("resultado").innerHTML = `O imposto de renda aplicado 0% = ${calculo}`
+            } else if (salario > 1434 || salario <= 2150) {
+                calculo = salario*0.075
+                document.getElementById("sal").innerHTML = `Seu salário: ${salario}`
+                document.getElementById("resultado").innerHTML = `O imposto de renda aplicado 7,5% = ${calculo}`
+            } else if (salario > 2150 || salario <= 2866) {
+                calculo = salario*0.15
+                document.getElementById("sal").innerHTML = `Seu salário: ${salario}`
+                document.getElementById("resultado").innerHTML = `O imposto de renda aplicado 15% = ${calculo}`
+            } else if (salario > 2866 || salario <= 3582) {
+                calculo = salario*0.225
+                document.getElementById("sal").innerHTML = `Seu salário: ${salario}`
+                document.getElementById("resultado").innerHTML = `O imposto de renda aplicado 22,5% = ${calculo}`
+            } else if (salario > 3582) {
+                calculo = salario*0.275
+                document.getElementById("sal").innerHTML = `Seu salário: ${salario}`
+                document.getElementById("resultado").innerHTML = `O imposto de renda aplicado 27,5% = ${calculo}`
+            } else {
+                document.getElementById("resultado").innerHTML = `O imposto digitado é inválido`
+            }{
+                
+            }{
+                
+            }{
+                
+            }{
+                
+            }
+        }
+    </script>
+
+</body>
+</html>

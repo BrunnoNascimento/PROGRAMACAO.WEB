@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Média do aluno</h1>
+
+    <p>
+        Entre com a primeira nota:
+        <input type="text" id="nota1" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        Entre com a segunda nota:
+        <input type="text" id="nota2" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        Entre com a terceira nota:
+        <input type="text" id="nota3" placeholder="Digite aqui o número">
+    </p>
+    <p>
+        <h2 id="media"></h2>
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <script>
+        function calcular(){
+            let nota1;
+            let nota2;
+            let nota3;
+
+            nota1 = Number(document.getElementById("nota1").value)
+            nota2 = Number(document.getElementById("nota2").value)
+            nota3 = Number(document.getElementById("nota3").value)
+            media = nota1 + nota2 + nota3 / 3
+
+            if(media >= 6){
+                document.getElementById("media").innerHTML = "Aprovado"
+            }
+            else{
+                if(media > 3 || media < 6){
+                    document.getElementById("media").innerHTML = "Exame"
+                }
+                else{
+                    if(media < 3 || media < 0){
+                        document.getElementById("media").innerHTML = "Reprovado"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

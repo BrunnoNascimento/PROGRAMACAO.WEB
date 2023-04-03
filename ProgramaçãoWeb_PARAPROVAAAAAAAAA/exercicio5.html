@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício5</title>
+    <style>
+        body{
+            font-style: italic;
+            color:darkmagenta;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1>Média</h1>
+
+    <p>
+        Entre com a A1:
+        <input type="text" id="a1" placeholder="Digite a primeira nota:">
+    </p>
+    <p>
+        Entre com a A2:
+        <input type="text" id="a2" placeholder="Digite a segunda nota:">
+    </p>
+    <p>
+        Entre com a A3:
+        <input type="text" id="a3" placeholder="Digite a terceira nota:">
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <p>
+        <h2 id="resultado"></h2>
+        <h1 id="exame"></h1>
+    </p>
+    <script>
+        function calcular(){
+            let a1;
+            let a2;
+            let a3;
+
+            a1 = Number(document.getElementById("a1").value)
+            a2 = Number(document.getElementById("a2").value)
+            a3 = Number(document.getElementById("a3").value)
+            
+            let resultado = (a1 + a2 + a3)/3
+
+            if(resultado >= 6){
+                document.getElementById("exame").innerHTML = "Aprovado!!!"
+            }
+            else{
+                if(resultado < 6 && resultado >= 3){
+                    document.getElementById("exame").innerHTML = "Exame!!!"
+                }
+                else{
+                    if(resultado < 3){
+                        document.getElementById("exame").innerHTML = "Reprovado!!!"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

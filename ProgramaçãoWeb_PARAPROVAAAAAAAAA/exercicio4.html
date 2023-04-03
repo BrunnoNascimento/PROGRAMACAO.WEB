@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício4</title>
+    <style>
+        body{
+            font-style: italic;
+            color:darkmagenta;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <form>
+            <h1>Área Retângulo</h1>
+            <div>
+                <label for="altura">Digite a altura do triângulo:</label>
+                <input type="text" id="altura" placeholder="Digite aqui a altura do triângulo">
+            </div>
+            <div>
+                <label for="comprimento">Digite o comprimento do triângulo:</label>
+                <input type="text" id="comprimento" placeholder="Digite aqui o comprimento do triângulo">
+            </div>
+        </form>
+        
+        <p>
+            <h2 id="areaR"></h2>
+        </p>
+    
+        <p>
+            <input type="button" value="Calcular" onclick="calcular()">
+        </p>
+    
+        <script>
+            function calcular(){
+                let alt;
+                let com;
+                let areaR;
+    
+                altura = Number(document.getElementById("altura").value)
+                comprimento = Number(document.getElementById("comprimento").value)
+                areaR = altura * comprimento
+                document.getElementById("areaR").innerHTML = areaR
+    
+            }
+        </script>
+</body>
+</html>

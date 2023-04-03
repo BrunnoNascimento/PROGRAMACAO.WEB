@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Par ou Ímpar</h1>
+
+    <p>
+        Digite um número inteiro:
+        <input type="text" id="inteiro" placeholder="Digite aqui o valor">
+    </p>
+
+    <p>
+        <h2 type="text" id="resto"></h2>
+    </p>
+
+    <p>
+        <button type="button" id="Calcular" onclick="calcular()">Calcular</button>
+    </p>
+
+    <script>
+
+    function calcular(){
+        
+        let inteiro
+        let resto
+        console.log("cheguei aqui")
+
+        inteiro = Number(document.getElementById("inteiro").value)
+        resto = inteiro % 2
+
+        if(resto == 0){
+            document.getElementById("resto").innerHTML = "Seu número é: Par"
+        }
+        else{
+            document.getElementById("resto").innerHTML = "Seu número é: Ímpar"
+        }
+
+    }
+    </script>
+</body>
+</html>

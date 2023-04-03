@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício7</title>
+    <style>
+        body{
+            font-style: italic;
+            color:darkturquoise;
+            text-align: center;
+            margin-top: 250px;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>ABESO</h1>
+
+    <form>
+
+        <div>
+            Digite seu Peso (ex: 70kg): 
+            <input type="text" id="peso">
+        </div>
+        <div>
+            Digite sua Altura (ex: 1.70m): 
+            <input type="text" id="altura">
+        </div>
+
+    </form>
+
+    <p>
+        <input type="button" value="Calcular IMC" onclick="calcular()">
+    </p>
+
+    <p>
+        Resultado:
+        <textarea id="resultado"></textarea>
+    </p>
+    
+
+    <script>
+        function calcular(){
+            let peso;
+            let altura;
+            let calculo;
+            let resultado;
+
+            peso = Number(document.getElementById("peso").value)
+            altura = Number(document.getElementById("altura").value)
+            calculo = peso/(altura*altura)
+
+
+            if (calculo <= 18.5){            
+                document.getElementById("resultado").innerHTML = `Você está  na classificação Abaixo do peso, IMC = ${calculo}`
+                tofixed(18.5)
+            } else if (calculo > 18.5 && calculo <= 24.9) {           
+                document.getElementById("resultado").innerHTML = `Você está na classificação Peso normal, IMC = ${calculo}`
+                tofixed(18.5, 24.9)
+            } else if (calculo >= 25.0 && calculo <= 29.9) {   
+                document.getElementById("resultado").innerHTML = `Você está na classificação Sobrepeso, IMC = ${calculo}`
+            } else if (calculo >= 30.0 && calculo <= 34.9) {        
+                document.getElementById("resultado").innerHTML = `Você está na classificação Obesidade Grau I, IMC = ${calculo}`
+            } else if (calculo >= 35.0 && calculo <= 39.9) {
+                document.getElementById("resultado").innerHTML = `Você está na classificação Obesidade Grau II, IMC = ${calculo}`
+            } else if (calculo >= 40.0) {
+                document.getElementById("resultado").innerHTML = `Você está na classificação Obesidade Grau III, IMC = ${calculo}`
+            } else {
+                document.getElementById("resultado").innerHTML = `O valor digitado é inválido`
+            } 
+        }
+    </script>
+
+</body>
+</html>

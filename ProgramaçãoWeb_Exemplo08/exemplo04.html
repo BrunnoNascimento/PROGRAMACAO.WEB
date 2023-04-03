@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caclculadora de Notas</title>
+</head>
+<body>
+    <h1>Caclculadora de Média do aluno</h1>
+    <p>
+        Digite a nota 1:
+        <input type="text" id="n1" placeholder="digite aqui...">
+    </p>
+    <p>
+        Digite a nota 2:
+        <input type="text" id="n2" placeholder="digite aqui...">
+    </p>
+    <p>
+        Digite a nota 3:
+        <input type="text" id="n3" placeholder="digite aqui...">
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <p>
+        <h2 id="res"></h2>
+        <h1 id="exa"></h1>
+    </p>
+    <script>
+
+        function pegarDados(){
+            let nota1 = nota1 = Number(document.getElementById("n1").value)
+            let nota2 = Number(document.getElementById("n1").value)
+            let nota3 = nota3 = Number(document.getElementById("n1").value)
+            calcular(nota1, nota2, nota3)
+        }
+
+
+        function calcular(argNota1, argNota2, argNota3){
+            //processamento
+            let resultado = (argNota1 + argNota2 + argNota3)/3
+
+            //chamada a função classificar
+            classificar();
+
+            
+
+        }
+        function classificar(argResultado){
+            let status;
+            
+
+            if(argResultado >= 6){
+                status = "Aprovado"
+            }
+            else{
+                if(argResultado < 6 && resultado >= 3){
+                    status = "Exame"
+                }
+                else{
+                    if(argResultado < 3){
+                        status = "Reprovado"
+                    }
+                }
+            }
+            imrpimirDados(argResultado, status)
+        }
+        function imrpimirDados(argResultado, argStatus){
+            //saída
+            document.getElementById("res").innerHTML = `A média é: ${resultado}`
+            //saída
+            document.getElementById("status").innerHTML = `A média é: ${status}`
+        }
+    </script>
+</body>
+</html>

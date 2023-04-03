@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caclculadora de Notas</title>
+</head>
+<body>
+    <h1>Caclculadora de Média do aluno</h1>
+    <p>
+        Digite a nota 1:
+        <input type="text" id="n1" placeholder="digite aqui...">
+    </p>
+    <p>
+        Digite a nota 2:
+        <input type="text" id="n2" placeholder="digite aqui...">
+    </p>
+    <p>
+        Digite a nota 3:
+        <input type="text" id="n3" placeholder="digite aqui...">
+    </p>
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+    <p>
+        <h2 id="res"></h2>
+        <h1 id="exa"></h1>
+    </p>
+    <script>
+        function calcular(){
+            //entrada
+            let nota1;
+            let nota2;
+            let nota3;
+            let status;
+
+            nota1 = Number(document.getElementById("n1").value)
+            nota2 = Number(document.getElementById("n1").value)
+            nota3 = Number(document.getElementById("n1").value)
+            //processamento
+            let resultado = (nota1 + nota2 + nota3)/3
+
+            //chamada a função classificar
+            classificar();
+
+            //saída
+            document.getElementById("res").innerHTML = `A média é: ${resultado}`
+
+        }
+        function classificar(argResultado){
+            let status;
+            
+
+            if(argResultado >= 6){
+                document.getElementById("status").innerHTML = `Você foi aprovado!!!`
+            }
+            else{
+                if(argResultado < 6 && resultado >= 3){
+                    document.getElementById("status").innerHTML = `Você realizará o exame!!!`
+                }
+                else{
+                    if(argResultado < 3){
+                        document.getElementById("status").innerHTML = `Você foi reprovado!!!`
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

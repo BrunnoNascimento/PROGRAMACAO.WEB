@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="altura">Altura:</label>
+            <input type="text" id="alt" placeholder="Digite aqui a altura">
+        </div>
+        <div>
+            <label for="comprimento">Comprimento:</label>
+            <input type="text" id="com" placeholder="Digite aqui o comprimento">
+        </div>
+    </form>
+    <p>
+        <h2 id="area"></h2>
+    </p>
+
+    <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </p>
+
+    <script>
+        function calcular(){
+            let alt;
+            let com;
+            let area;
+
+            alt = Number(document.getElementById("alt").value)
+            com = Number(document.getElementById("com").value)
+            area = alt * com
+            document.getElementById("area").innerHTML = area
+
+        }
+    </script>
+</body>
+</html>

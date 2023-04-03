@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício8</title>
+    <style>
+        body{
+            font-style: italic;
+            color:darkmagenta;
+        }
+        h1{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Calculadora Online</h1>
+        <div>
+            Digite seu primeiro número: 
+            <input type="text" id="numero1">
+        </div>
+        <div>
+            Digite o seu segundo número: 
+            <input type="text" id="numero2">
+        </div>
+    </form>
+    <p>
+        <input type="button" value="+" onclick="calcularADC()">
+        <input type="button" value="-" onclick="calcularSUB()">
+        <input type="button" value="*" onclick="calcularMUL()">
+        <input type="button" value="/" onclick="calcularDIV()">
+    </p>
+    <p>
+        Resultado:
+        <textarea id="resto"></textarea>
+    </p>
+
+    <script>
+        function calcularADC(){
+            let numero1;
+            let numero2;
+            let resto;
+            numero1 = Number(document.getElementById("numero1").value)
+            numero2 = Number(document.getElementById("numero2").value)
+
+            resto = numero1 + numero2
+            document.getElementById("resto").innerHTML = `O resultado é ${resto}`
+        }
+        function calcularSUB(){
+            let numero1;
+            let numero2;
+            let resto;
+            numero1 = Number(document.getElementById("numero1").value)
+            numero2 = Number(document.getElementById("numero2").value)
+
+            resto = numero1 - numero2
+            document.getElementById("resto").innerHTML = `O resultado é ${resto}`
+        }
+        function calcularMUL(){
+            let numero1;
+            let numero2;
+            let resto;
+            numero1 = Number(document.getElementById("numero1").value)
+            numero2 = Number(document.getElementById("numero2").value)
+
+            resto = numero1 * numero2
+            document.getElementById("resto").innerHTML = `O resultado é ${resto}`
+        }
+        function calcularDIV(){
+            let numero1;
+            let numero2;
+            let resto;
+            numero1 = Number(document.getElementById("numero1").value)
+            numero2 = Number(document.getElementById("numero2").value)
+
+            resto = numero1 / numero2
+            document.getElementById("resto").innerHTML = `O resultado é ${resto}`
+        }
+    </script>
+</body>
+</html>
